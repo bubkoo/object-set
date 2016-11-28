@@ -42,6 +42,15 @@ set({ foo: 1 }, 'foo.obj.key', 3);
 // => { foo: 1 }
 ```
 
+Use it to functionally create an object:
+
+```js
+Array.from('12345')
+  .map(parseFloat)
+	.reduce((o, n) => set(o, n, n**2), {})
+// => { 1: 1, 2: 4, 3: 9, 4: 16, 5: 25 }
+```
+
 
 ## Related
 
