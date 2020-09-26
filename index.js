@@ -34,6 +34,10 @@ module.exports = function (object, path, value) {
 
     var key = paths[index];
 
+    if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+      return object;
+    }
+
     if (isObject(nested)) {
 
       var newValue = value;
